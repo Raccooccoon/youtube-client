@@ -1,0 +1,29 @@
+.search_input {
+  display: flex;
+  justify-content: center;
+  margin: 28px 0;
+
+  &--field {
+    width: 400px;
+    height: 24px;
+    line-height: 24px;
+    background-color: #eeebf0;
+    padding-left: 2px;
+    border: 0;
+    outline: 0;
+    font-size: 20px;
+  }
+
+  &--button {
+    width: 100px;
+    height: 24px;
+    color: #eeebf0;
+    background-color: #2F80ED;
+    box-shadow: 2px 0px 4px #2F80ED;
+    border-radius: 0 5px 5px 0;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+  }
+}
+

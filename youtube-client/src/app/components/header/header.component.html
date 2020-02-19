@@ -1,1 +1,11 @@
-<p>header works!</p>
+<header class="header">
+  <div class="header--logo"></div>
+  <div class="header--search_field">
+    <app-search-input></app-search-input>
+  </div>
+  <button class="header--sorting_button" (click)="hideFilter()"></button>
+  <div class="header--signin_field">
+    <app-auth></app-auth>
+  </div>
+</header>
+<app-filter *ngIf="visibleFilter" (flagsTransitOne)="composeFlags($event)"></app-filter>

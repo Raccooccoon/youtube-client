@@ -1,0 +1,7 @@
+<div class="filters">
+  <div class="filters--legend">Sorting by:</div>
+  <div class="filters--sort_by_date filter" (click)="sortByDateFilter()" [ngClass]="{active_filter:sortByDate}">date</div>
+  <div class="filters--sort_by_views filter" (click)="sortByLikesFilter()" [ngClass]="{active_filter:sortByLikes}">count of views</div>
+  <div class="filters--sort_by_word filter" >word or sentance</div>
+  <input type="text" class="filters--sorting_input" (input)="sortByKeyWordFilter()" [(ngModel)]="sortByKeyWord">
+</div>
