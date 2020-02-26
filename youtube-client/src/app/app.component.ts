@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'youtube-client';
+  public title: string = 'youtube-client';
+  public flags: (boolean | string)[];
+
+  public transportPipe(arr: (boolean | string)[]): void {
+    this.flags = arr;
+  }
 }
