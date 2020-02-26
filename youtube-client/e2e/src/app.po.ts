@@ -1,3 +1,5 @@
+/* tslint:disable typedef no-any member-access */
+
 import { browser, by, element } from 'protractor';
 
 export class AppPage {

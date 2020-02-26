@@ -1,0 +1,7 @@
+<div class="filters">
+  <div class="filters--legend">Sorting by:</div>
+  <div class="filters--sort_by_date filter" (click)="videoService.sortByDateFilter()" [ngClass]="{active_filter:videoService.sortByDate}">date</div>
+  <div class="filters--sort_by_views filter" (click)="videoService.sortByViewsFilter()" [ngClass]="{active_filter:videoService.sortByLikes}">count of views</div>
+  <div class="filters--sort_by_word filter">word or sentence</div>
+  <input type="text" class="filters--sorting_input" (input)="videoService.sortByKeyWordFilter()" [(ngModel)]="videoService.sortByKeyWord">
+</div>
