@@ -1,12 +1,11 @@
-import { Component, OnInit, OnDestroy, OnChanges } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { LogInService } from '../../services/log-in.service';
 import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-auth-form',
   templateUrl: './auth-form.component.html',
-  styleUrls: ['./auth-form.component.scss'],
-  providers: [LogInService]
+  styleUrls: ['./auth-form.component.scss']
 })
 export class AuthFormComponent implements OnInit {
   public userName: string;
@@ -16,12 +15,10 @@ export class AuthFormComponent implements OnInit {
 
   public ngOnInit(): void {
     if (this.setUser.get('UserName') !== null) {
-      console.log(this.setUser.get('UserName'));
       this.router.navigate(['main']);
     } else {
       this.router.navigate(['']);
     }
-    console.log(this.setUser.isLogged);
   }
 
   public setName(): void {

@@ -11,12 +11,12 @@ import { SortByWordPipe } from './pipes/sort-by-word.pipe';
     SortByWordPipe
   ],
   imports: [
-    CommonModule
+    CommonModule,
   ],
   exports: [
     SortByDatePipe,
     SortByViewsPipe,
-    SortByWordPipe
+    SortByWordPipe,
   ]
 })
 export class SharedModule { }

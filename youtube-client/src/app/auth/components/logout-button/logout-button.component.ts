@@ -5,8 +5,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-logout-button',
   templateUrl: './logout-button.component.html',
-  styleUrls: ['./logout-button.component.scss'],
-  providers: [LogInService]
+  styleUrls: ['./logout-button.component.scss']
 })
 export class LogoutButtonComponent implements DoCheck {
   public visibleButton: boolean;

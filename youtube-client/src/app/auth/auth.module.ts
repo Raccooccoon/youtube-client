@@ -1,27 +1,21 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { AuthComponent } from './components/auth/auth.component';
 import { AuthFormComponent } from './pages/auth-form/auth-form.component';
 import { LogInService } from './services/log-in.service';
 import { FormsModule } from '@angular/forms';
-import { YoutubeModule } from '../youtube/youtube.module';
-import { LogoutButtonComponent } from './components/logout-button/logout-button.component';
+import { AuthRoutingModule } from './auth-routing.module';
 
 @NgModule({
   declarations: [
-    AuthComponent,
-    AuthFormComponent,
-    LogoutButtonComponent
+    AuthFormComponent
   ],
   imports: [
     CommonModule,
     FormsModule,
-    YoutubeModule
+    AuthRoutingModule
   ],
   exports: [
-    AuthComponent,
-    AuthFormComponent,
-    LogoutButtonComponent
+    AuthFormComponent
   ],
   providers: [
     LogInService

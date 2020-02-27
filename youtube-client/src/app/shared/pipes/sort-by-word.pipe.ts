@@ -8,7 +8,8 @@ export class SortByWordPipe implements PipeTransform {
   public transform(videos: ISearchItem[], value: string): ISearchItem[] {
     if (Boolean(value)) {
       const videosCopy: ISearchItem[] = videos.slice();
-      return videosCopy.filter(video => video.snippet.title.toLowerCase().includes(value));
+      const  valueInLowerCase: string = value.toLowerCase();
+      return videosCopy.filter(video => video.snippet.title.toLowerCase().includes(valueInLowerCase));
     } else {
       return videos;
     }

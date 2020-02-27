@@ -1,6 +1,7 @@
+/* tslint:disable  typedef */
+
 import { Component } from '@angular/core';
 import  Response from '../../../../response.json';
-import { ISearchResponse } from '../../../youtube/models/search-response.model';
 import { SearchResultsComponent } from '../../../youtube/pages/search-results/search-results.component';
 
 @Component({
@@ -9,7 +10,7 @@ import { SearchResultsComponent } from '../../../youtube/pages/search-results/se
   styleUrls: ['./search-input.component.scss']
 })
 export class SearchInputComponent {
-  public response: ISearchResponse;
+  public response;
 
   public searchVideos(): void {
     this.response = Response;

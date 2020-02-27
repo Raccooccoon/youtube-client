@@ -1,6 +1,7 @@
+/* tslint:disable  typedef */
 import { Inject, Injectable, InjectionToken } from '@angular/core';
 
-export const loginStorage: Storage = new InjectionToken<Storage>('Login Storage', {
+export const loginStorage = new InjectionToken<Storage>('Login Storage', {
   providedIn: 'root',
   factory: () => localStorage
 });

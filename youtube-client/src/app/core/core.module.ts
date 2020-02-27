@@ -1,28 +1,31 @@
-import { YoutubeModule } from './../youtube/youtube.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 import { HeaderComponent } from './components/header/header.component';
 import { SearchInputComponent } from './components/search-input/search-input.component';
 import { FilterComponent } from './components/filter/filter.component';
-import { AuthModule } from '../auth/auth.module';
-import { FormsModule } from '@angular/forms';
+import { AuthComponent } from '../auth/components/auth/auth.component';
+import { LogoutButtonComponent } from '../auth/components/logout-button/logout-button.component';
+import { PageNotFoundComponent } from '../core/pages/page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
     HeaderComponent,
     SearchInputComponent,
-    FilterComponent
+    FilterComponent,
+    AuthComponent,
+    LogoutButtonComponent,
+    PageNotFoundComponent
   ],
   imports: [
     CommonModule,
     FormsModule,
-    AuthModule,
-    YoutubeModule,
   ],
   exports: [
     HeaderComponent,
     SearchInputComponent,
     FilterComponent,
+    PageNotFoundComponent
   ]
 })
 export class CoreModule { }
