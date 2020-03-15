@@ -5,7 +5,6 @@ import { HeaderComponent } from './components/header/header.component';
 import { SearchInputComponent } from './components/search-input/search-input.component';
 import { FilterComponent } from './components/filter/filter.component';
 import { AuthComponent } from '../auth/components/auth/auth.component';
-import { LogoutButtonComponent } from '../auth/components/logout-button/logout-button.component';
 import { PageNotFoundComponent } from '../core/pages/page-not-found/page-not-found.component';
 
 @NgModule({
@@ -14,12 +13,12 @@ import { PageNotFoundComponent } from '../core/pages/page-not-found/page-not-fou
     SearchInputComponent,
     FilterComponent,
     AuthComponent,
-    LogoutButtonComponent,
     PageNotFoundComponent
   ],
   imports: [
     CommonModule,
     FormsModule,
+
   ],
   exports: [
     HeaderComponent,

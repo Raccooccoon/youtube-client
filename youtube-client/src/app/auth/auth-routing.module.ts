@@ -1,14 +1,14 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { AuthFormComponent } from './pages/auth-form/auth-form.component';
+import { ActiveGuard } from './services/active.guard';
 
 const routes: Routes = [
   {
     path: '',
-    component: AuthFormComponent
   },
   {
     path: 'main',
+    canActivateChild: [ActiveGuard],
     loadChildren: () => import('../youtube/youtube.module').then(m => m.YoutubeModule)
   }
 ];

@@ -4,9 +4,11 @@
     <app-search-input></app-search-input>
   </div>
   <button class="header--sorting_button" (click)="hideFilter()"></button>
-  <div class="header--signin_field">
+  <div class="header--signin_field" *ngIf="authenticated.user$ | async as user; else login">
     <app-auth></app-auth>
-    <app-logout-button></app-logout-button>
   </div>
+  <ng-template #login>
+    <button class="login" (click)="authenticated.googleSignin()">Login with Google</button>
+  </ng-template>
 </header>
 <app-filter *ngIf="visibleFilter"></app-filter>

@@ -1,2 +1,9 @@
-<app-header></app-header>
+
+<!-- <div *ngIf="authenticated.user$ | async as user; else login"> -->
+  <app-header></app-header>
+<!-- </div> -->
+<!-- <ng-template #login>
+  <button class="login" (click)="authenticated.googleSignin()"></button>
+</ng-template> -->
+
 <router-outlet></router-outlet>

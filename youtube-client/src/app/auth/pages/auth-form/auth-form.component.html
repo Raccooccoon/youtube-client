@@ -1,8 +1,0 @@
-<form class="auth_form" action="">
-  <p class="auth_form--name">Login</p>
-  <label for="user_name" class="auth_form--name_label">Login:</label>
-  <input type="text" name="user_name" class="auth_form--name_input" (input)="setName()" [(ngModel)]="userName" required>
-  <label for="user_password" class="auth_form--password_label">Password:</label>
-  <input type="password" name="user_password" class="auth_form--password_input" (input)="setPassword()" [(ngModel)]="userPassword" required>
-  <button class="auth_form--login_button" (click)="login()">Login</button>
-</form>

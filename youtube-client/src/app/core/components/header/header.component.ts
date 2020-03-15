@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthenticateService } from '../../../auth/services/authenticate.service';
 
 @Component({
   selector: 'app-header',
@@ -8,6 +9,8 @@ import { Component, OnInit } from '@angular/core';
 export class HeaderComponent implements OnInit {
 
   public visibleFilter: boolean;
+
+  constructor(public authenticated: AuthenticateService) {}
 
   public ngOnInit(): void {
     this.visibleFilter = false;

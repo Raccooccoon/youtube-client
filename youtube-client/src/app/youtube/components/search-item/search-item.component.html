@@ -3,19 +3,19 @@
   <div class="video_item--statistics">
     <div class="video_item--statistics-item views">
       <div class="views--image statistics_icon"></div>
-    <div class="views--count statistics_count">{{ video.statistics.viewCount | number }}</div>
+    <div class="views--count statistics_count">{{ video.statistics.viewCount | numbersView }}</div>
     </div>
     <div class="video_item--statistics-item likes">
       <div class="likes--image statistics_icon"></div>
-      <div class="likes--count statistics_count">{{ video.statistics.likeCount | number }}</div>
+      <div class="likes--count statistics_count">{{ video.statistics.likeCount | numbersView }}</div>
     </div>
     <div class="video_item--statistics-item dislikes">
       <div class="dislikes--image statistics_icon"></div>
-      <div class="dislikes--count statistics_count">{{ video.statistics.dislikeCount | number }}</div>
+      <div class="dislikes--count statistics_count">{{ video.statistics.dislikeCount | numbersView }}</div>
     </div>
     <div class="video_item--statistics-item comments">
       <div class="comments--image statistics_icon"></div>
-      <div class="comments--count statistics_count">{{ video.statistics.commentCount | number }}</div>
+      <div class="comments--count statistics_count">{{ video.statistics.commentCount | numbersView }}</div>
     </div>
   </div>
   <div class="video_item--title">{{ video.snippet.title }}</div>

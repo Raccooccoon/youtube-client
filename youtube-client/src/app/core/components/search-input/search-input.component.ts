@@ -1,19 +1,33 @@
 /* tslint:disable  typedef */
 
-import { Component } from '@angular/core';
-import  Response from '../../../../response.json';
-import { SearchResultsComponent } from '../../../youtube/pages/search-results/search-results.component';
+import { Component, OnInit } from '@angular/core';
+import { Subject } from 'rxjs';
+import { debounceTime, switchMap, skipWhile, distinctUntilChanged } from 'rxjs/operators';
+import { SearchOfVideosService } from '../../services/search-of-videos.service';
 
 @Component({
   selector: 'app-search-input',
   templateUrl: './search-input.component.html',
-  styleUrls: ['./search-input.component.scss']
+  styleUrls: ['./search-input.component.scss'],
 })
-export class SearchInputComponent {
-  public response;
+export class SearchInputComponent implements OnInit {
+  public searchText$ = new Subject<string>();
+  public withRefresh = false;
 
-  public searchVideos(): void {
-    this.response = Response;
-    SearchResultsComponent.prototype.getData(this.response);
+  constructor(public searchVideo: SearchOfVideosService) {}
+
+  public search(videoName: string): void {
+    this.searchText$.next(videoName);
+  }
+
+  public ngOnInit() {
+    this.searchVideo.pageToken = '';
+    this.searchVideo.response$ = this.searchText$.pipe(
+      debounceTime(500),
+      skipWhile(videoName => videoName.length < 3),
+      distinctUntilChanged(),
+      switchMap(keyword =>
+        this.searchVideo.searchByKeyword(keyword))
+    );
   }
 }

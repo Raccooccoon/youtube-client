@@ -1,7 +1,7 @@
-<div class="video_details">
+<div class="video_details" *ngIf="flag" >
   <button class="back_to_main" (click)="goToMainPage()">Back</button>
   <div class="video_card">
-    <img class="video_container" [src]="video.snippet.thumbnails.maxres.url">
+    <img class="video_container" [src]="video.snippet.thumbnails.medium.url">
     <div class="video_info">
       <div class="video_info--header">
       <div class="video_info--header--title">{{ video.snippet.title }}</div>

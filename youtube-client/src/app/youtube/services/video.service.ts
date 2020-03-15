@@ -1,8 +1,6 @@
 import { Injectable } from '@angular/core';
-import  Response from '../../../response.json';
 import { ISearchItem } from '../models/search-item.model';
 import { Router } from '@angular/router';
-import { LogInService } from '../../auth/services/log-in.service';
 
 @Injectable({
   providedIn: 'root'
@@ -14,21 +12,7 @@ export class VideoService {
   public sortByKeyWord: string = '';
   public flagsForPipe: (boolean | string)[] = [this.sortByDate, this.sortByViews, ''];
 
-  constructor(public serviceRouter: Router, public checkUser: LogInService) {}
-
-  public getVideo(id: string): ISearchItem {
-    if (this.checkUser.get('UserName') === null) {
-      this.serviceRouter.navigate(['']);
-    }
-    this.videos = Response.items;
-    const searchedVideo: ISearchItem[] = this.videos.filter(video => video.id === id);
-
-    if (searchedVideo.length === 0) {
-      this.serviceRouter.navigate(['/**']);
-      return this.videos[0];
-    }
-    return searchedVideo[0];
-  }
+  constructor(public serviceRouter: Router) {}
 
   public sortByDateFilter(): void {
     this.sortByDate = !this.sortByDate;
