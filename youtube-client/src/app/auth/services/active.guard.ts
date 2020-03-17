@@ -15,13 +15,14 @@ export class ActiveGuard implements CanActivateChild {
 
   public canActivateChild(
     next: ActivatedRouteSnapshot,
-    state: RouterStateSnapshot): Observable<boolean> {
+    state: RouterStateSnapshot
+    ): Observable<boolean> {
       return this.authenticate.user$.pipe(
         take(1),
         map(user => !!user),
         tap(loggedIn => {
           if (!loggedIn) {
-            console.log('access denied');
+            alert('Please login!');
             this.router.navigate(['/']);
           }
         })

@@ -13,13 +13,13 @@ import { ISearchByKeywordResponse } from '../../youtube/models/search-by-keyword
 })
 export class SearchOfVideosService {
 
-  public response$: Observable<any>;
   public pageToken: string = '';
   public keyWord: string = '';
+  public response$: Observable<any>;
   public videos$: BehaviorSubject<ISearchItem[]> = new BehaviorSubject<ISearchItem[]>([]);
   public videos: ISearchItem[] = [];
 
-  constructor(public http: HttpClient) { }
+  constructor(public http: HttpClient) {}
 
   public searchByKeyword(keyword: string, maxResults: number = 12): Observable<Object> {
     keyword = keyword.trim().replace(' ', '+');
@@ -27,20 +27,24 @@ export class SearchOfVideosService {
     let videosIDs: string = '';
     const videosListURL: string = `search?part=snippet&maxResults=${maxResults}&pageToken=${this.pageToken}&q=${keyword}&key=`;
     return this.http.get(videosListURL)
-      .pipe(map((response: ISearchByKeywordResponse) => {
-        this.pageToken = response.nextPageToken;
-        response.items.forEach(item => {
-          videosIDs = `${videosIDs}${item.id.videoId},`;
-        });
-        return videosIDs;
-      }));
+      .pipe(
+        map((response: ISearchByKeywordResponse) => {
+          this.pageToken = response.nextPageToken;
+          response.items.forEach(item => {
+            videosIDs = `${videosIDs}${item.id.videoId},`;
+          });
+          return videosIDs;
+        })
+      );
   }
 
   public searchByID(listOfIDs: string): Observable<ISearchResponse> {
     const videosIDsUrl: string = `videos?part=snippet,statistics&id=${listOfIDs}&key=`;
     return this.http.get(videosIDsUrl)
-    .pipe(map((response: ISearchResponse) => {
-      return response;
-    }));
+    .pipe(
+      map((response: ISearchResponse) => {
+        return response;
+      })
+    );
   }
 }

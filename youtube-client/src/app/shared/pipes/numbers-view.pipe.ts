@@ -5,7 +5,6 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class NumbersViewPipe implements PipeTransform {
   public transform(num: (string | number)): string {
-
     if (Number(num) >= 1000000) {
       const transformedNum: string = (Number(num) / 1000000).toFixed(1).toLocaleString();
       return `${transformedNum}m`;

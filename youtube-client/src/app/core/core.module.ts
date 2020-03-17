@@ -17,8 +17,7 @@ import { PageNotFoundComponent } from '../core/pages/page-not-found/page-not-fou
   ],
   imports: [
     CommonModule,
-    FormsModule,
-
+    FormsModule
   ],
   exports: [
     HeaderComponent,

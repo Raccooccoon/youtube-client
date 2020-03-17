@@ -1,7 +1,7 @@
 .video_details {
   display: flex;
   justify-content: space-between;
-  width: 1280px;
+  width: 1397px;
   margin: 150px auto;
 }
 
@@ -19,37 +19,34 @@
 
 .video_card {
   display: flex;
-  width: 1200px;
-  height: 460px;
+  width: 1324px;
+  height: 480px;
   box-shadow: 5px 5px 20px rgba(51, 51, 51, 0.25);
   border-radius: 5px;
 }
 
-.video_container {
-  width: 750px;
-  height: 460px;
-}
-
 .video_info {
-  width: 450px;
+  width: 470px;
   display: flex;
   flex-direction: column;
-  padding: 30px 20px;
+  padding: 10px 20px 30px;
   background: #E5E5E5;
 
   &--header {
     display: flex;
+    flex-direction: column;
     color: #333333;
     height: fit-content;
 
     &--title {
       font-size: 24px;
       font-weight: bold;
-      width: 240px;
+      padding-top: 10px;
       padding-right: 10px;
     }
 
     &--date {
+      align-self: flex-end;
       font-size: 14px;
     }
   }

@@ -22,12 +22,12 @@ export class SearchInputComponent implements OnInit {
 
   public ngOnInit() {
     this.searchVideo.pageToken = '';
-    this.searchVideo.response$ = this.searchText$.pipe(
-      debounceTime(500),
-      skipWhile(videoName => videoName.length < 3),
-      distinctUntilChanged(),
-      switchMap(keyword =>
-        this.searchVideo.searchByKeyword(keyword))
-    );
+    this.searchVideo.response$ = this.searchText$
+      .pipe(
+        debounceTime(500),
+        skipWhile(videoName => videoName.length < 3),
+        distinctUntilChanged(),
+        switchMap(keyword => this.searchVideo.searchByKeyword(keyword))
+      );
   }
 }

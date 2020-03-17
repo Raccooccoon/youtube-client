@@ -19,14 +19,35 @@
     padding-left: 2px;
   }
 
+  .filters--sort_by_date {
+    width: 45px;
+  }
+
+  .filters--sort_by_views {
+    width: 120px;
+  }
+
   .filter {
     color: #2F80ED;
     margin: 0 15px;
     cursor: pointer;
   }
 
-  .active_filter {
+  .sort_up {
     text-decoration: underline;
     text-decoration-color: #2F80ED;
+
+    &:after {
+      content: '▲';
+    }
+  }
+
+  .sort_down {
+    text-decoration: underline;
+    text-decoration-color: #2F80ED;
+
+    &:after {
+      content: '▼';
+    }
   }
 }

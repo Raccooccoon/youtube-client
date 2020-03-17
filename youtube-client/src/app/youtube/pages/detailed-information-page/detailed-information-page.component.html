@@ -1,11 +1,11 @@
 <div class="video_details" *ngIf="flag" >
   <button class="back_to_main" (click)="goToMainPage()">Back</button>
   <div class="video_card">
-    <img class="video_container" [src]="video.snippet.thumbnails.medium.url">
+    <iframe width="854" height="480" [src]="embedURL()" frameborder="0" allowfullscreen></iframe>
     <div class="video_info">
       <div class="video_info--header">
-      <div class="video_info--header--title">{{ video.snippet.title }}</div>
         <div class="video_info--header--date">{{ video.snippet.publishedAt | date:'fullDate' }}</div>
+        <div class="video_info--header--title">{{ video.snippet.title }}</div>
       </div>
       <div class="video_info--main">
         <div class="video_info--main--title">Description:</div>

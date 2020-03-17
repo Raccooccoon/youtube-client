@@ -9,7 +9,5 @@ import { SearchOfVideosService } from '../../../core/services/search-of-videos.s
 })
 export class SearchItemComponent {
   @Input() public video: ISearchItem;
-
   constructor(public searchedVideos: SearchOfVideosService) {}
-
 }

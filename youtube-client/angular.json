@@ -122,8 +122,17 @@
               "devServerTarget": "youtube-client:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "@netlify-builder/deploy:deploy",
+          "options": {
+            "outputPath": "dist/youtube-client",
+            "netlifyToken": "",
+            "siteId": ""
+          }
         }
       }
-    }},
+    }
+  },
   "defaultProject": "youtube-client"
 }
