@@ -1,0 +1,4 @@
+<main class="search_results">
+  <app-search-item *ngFor="let video of searchVideo.videos$ | async | sortByDate: filterBydateFlag() | sortByViews: filterByViewsFlag() | sortByWord: filterByValueFlag()" [video]="video"></app-search-item>
+</main>
+<button class="show_more" *ngIf="showMoreFlag" (click)="loadMore()">Load more</button>

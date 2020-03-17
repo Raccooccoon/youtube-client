@@ -1,0 +1,14 @@
+<header class="header">
+  <div class="header--logo"></div>
+  <div class="header--search_field">
+    <app-search-input></app-search-input>
+  </div>
+  <button class="header--sorting_button" (click)="hideFilter()"></button>
+  <div class="header--signin_field" *ngIf="authenticated.user$ | async as user; else login">
+    <app-auth></app-auth>
+  </div>
+  <ng-template #login>
+    <button class="login" (click)="authenticated.googleSignin()">Login with Google</button>
+  </ng-template>
+</header>
+<app-filter *ngIf="visibleFilter"></app-filter>

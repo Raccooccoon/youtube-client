@@ -1,0 +1,5 @@
+<div class="user">
+  <div class="user--name">{{ auth.userName }}</div>
+  <img class="user--photo" [src]="auth.userPhoto">
+  <button class="logout_button" (click)="auth.signOut()">Logout</button>
+</div>

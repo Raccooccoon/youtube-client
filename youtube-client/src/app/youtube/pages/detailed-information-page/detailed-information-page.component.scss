@@ -1,0 +1,114 @@
+.video_details {
+  display: flex;
+  justify-content: space-between;
+  width: 1397px;
+  margin: 150px auto;
+}
+
+.back_to_main {
+  width: 70px;
+  height: 24px;
+  color: #eeebf0;
+  background-color: #2F80ED;
+  border-radius: 5px;
+  font-size: 14px;
+  border: 0;
+  outline: 0;
+  cursor: pointer;
+}
+
+.video_card {
+  display: flex;
+  width: 1324px;
+  height: 480px;
+  box-shadow: 5px 5px 20px rgba(51, 51, 51, 0.25);
+  border-radius: 5px;
+}
+
+.video_info {
+  width: 470px;
+  display: flex;
+  flex-direction: column;
+  padding: 10px 20px 30px;
+  background: #E5E5E5;
+
+  &--header {
+    display: flex;
+    flex-direction: column;
+    color: #333333;
+    height: fit-content;
+
+    &--title {
+      font-size: 24px;
+      font-weight: bold;
+      padding-top: 10px;
+      padding-right: 10px;
+    }
+
+    &--date {
+      align-self: flex-end;
+      font-size: 14px;
+    }
+  }
+
+  &--main {
+    display: flex;
+    flex-direction: column;
+    color: #333333;
+    height: 360px;
+    overflow-y: scroll;
+
+    &--title {
+      font-size: 20px;
+      font-weight: bolder;
+      margin: 10px 0;
+    }
+
+    &--description {
+      font-size: 14px;
+    }
+  }
+
+  &--statistics {
+    display: flex;
+    height: 20px;
+    margin: 0 auto;
+
+    &--views, &--likes, &--dislikes, &--comments {
+      display: flex;
+      padding: 5px;
+    }
+
+    .statistics_icon {
+      width: 30px;
+      height: 30px;
+      background-image: url('../../../../assets/view.svg');
+      background-position: 50% 50%;
+      background-repeat: no-repeat;
+    }
+
+    .views {
+      background-image: url('../../../../assets/view.svg');
+    }
+
+    .likes {
+      background-image: url('../../../../assets/like.svg');
+    }
+
+    .dislikes {
+      background-image: url('../../../../assets/dislike.svg');
+    }
+
+    .comments {
+      background-image: url('../../../../assets/comment.svg');
+    }
+
+    .statistics_number {
+      width: fit-content;
+      height: 30px;
+      font-size: 14px;
+      font-weight: bolder;
+      line-height: 30px;
+    }
+  }
+}

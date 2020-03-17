@@ -1,0 +1,20 @@
+.page404_container {
+  width: 550px;
+  display: flex;
+  justify-content: space-evenly;
+  margin: 250px auto;
+
+  &--icon {
+    width: 100px;
+    height: 100px;
+    background-image: url('../../../../assets/404_page.svg');
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+  }
+
+  &--text {
+    color: #333333;
+    font-size: 30px;
+    line-height: 90px;
+  }
+}

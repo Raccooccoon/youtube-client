@@ -1,0 +1,53 @@
+.filters {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 50px;
+  background-color: #333333;
+  font-size: 16px;
+
+  &--legend {
+    color: #ffffff;
+  }
+
+  &--sorting_input {
+    width: 150px;
+    height: 18px;
+    line-height: 16px;
+    border: 0;
+    outline: 0;
+    padding-left: 2px;
+  }
+
+  .filters--sort_by_date {
+    width: 45px;
+  }
+
+  .filters--sort_by_views {
+    width: 120px;
+  }
+
+  .filter {
+    color: #2F80ED;
+    margin: 0 15px;
+    cursor: pointer;
+  }
+
+  .sort_up {
+    text-decoration: underline;
+    text-decoration-color: #2F80ED;
+
+    &:after {
+      content: '▲';
+    }
+  }
+
+  .sort_down {
+    text-decoration: underline;
+    text-decoration-color: #2F80ED;
+
+    &:after {
+      content: '▼';
+    }
+  }
+}
