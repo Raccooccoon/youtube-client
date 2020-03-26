@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { ISearchItem } from '../../models/search-item.model';
-import { SearchOfVideosService } from '../../../core/services/search-of-videos.service';
+import { SearchOfVideosService } from '../../services/search-of-videos.service';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 
 @Component({

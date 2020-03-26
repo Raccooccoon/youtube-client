@@ -9,7 +9,7 @@ export class UrlsInterceptor implements HttpInterceptor {
 
   public intercept(req: HttpRequest<string>, next: HttpHandler): Observable<HttpEvent<Event>> {
     const baseUrl: string = 'https://www.googleapis.com/youtube/v3/';
-    const accessToken: string = 'AIzaSyC9cYgy0ZyEgpaz-aZ2ATFUg1XN0QttXH8';
+    const accessToken: string = 'AIzaSyBQDCdTPisvQovffSD2ryHmOFX7wUCVqTU';
     req = req.clone({
       url: baseUrl + req.url + accessToken
     });

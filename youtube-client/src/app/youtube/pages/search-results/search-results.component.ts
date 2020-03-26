@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ISearchResponse } from '../../models/search-response.model';
 import { ISearchItem } from '../../models/search-item.model';
-import { VideoService } from '../../services/video.service';
-import { SearchOfVideosService } from '../../../core/services/search-of-videos.service';
+import { VideosFilterService } from '../../services/videos-filter.service';
+import { SearchOfVideosService } from '../../services/search-of-videos.service';
 import { mergeMap } from 'rxjs/operators';
 
 @Component({
@@ -15,7 +15,7 @@ export class SearchResultsComponent implements OnInit {
   public showMoreFlag: boolean = false;
 
   constructor(
-    public videoService: VideoService,
+    public videoService: VideosFilterService,
     public searchVideo: SearchOfVideosService,
   ) {}
 
@@ -39,6 +39,10 @@ export class SearchResultsComponent implements OnInit {
   }
 
   public loadMore(): void {
+    if (this.videoService.sortByDate || this.videoService.sortByViews
+      || Boolean(this.videoService.sortByKeyWord)) {
+      return alert('Please, reset the filter.');
+    }
     const keyword: string = this.searchVideo.keyWord;
     this.searchVideo.searchByKeyword(keyword)
       .pipe(

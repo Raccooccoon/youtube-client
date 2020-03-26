@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { VideoService } from '../../../youtube/services/video.service';
+import { VideosFilterService } from '../../../youtube/services/videos-filter.service';
 
 @Component({
   selector: 'app-filter',
@@ -8,5 +8,5 @@ import { VideoService } from '../../../youtube/services/video.service';
 })
 
 export class FilterComponent {
-  constructor(public videoService: VideoService) { }
+  constructor(public videoService: VideosFilterService) { }
 }

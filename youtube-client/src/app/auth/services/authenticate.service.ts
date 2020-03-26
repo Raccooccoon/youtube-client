@@ -32,6 +32,7 @@ export class AuthenticateService {
         }
       })
     );
+    this.router.navigate(['main']);
   }
 
   private updateUserData({ uid, email, displayName, photoURL}: User): Promise<void> {

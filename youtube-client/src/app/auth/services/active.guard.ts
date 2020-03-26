@@ -17,15 +17,15 @@ export class ActiveGuard implements CanActivateChild {
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
     ): Observable<boolean> {
-      return this.authenticate.user$.pipe(
-        take(1),
-        map(user => !!user),
-        tap(loggedIn => {
-          if (!loggedIn) {
-            alert('Please login!');
-            this.router.navigate(['/']);
-          }
-        })
-      );
+      return this.authenticate.user$
+        .pipe(
+          take(1),
+          map(user => !!user),
+          tap(loggedIn => {
+            if (!loggedIn) {
+              this.router.navigate(['/']);
+            }
+          })
+        );
     }
   }

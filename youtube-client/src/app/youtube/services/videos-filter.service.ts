@@ -5,7 +5,7 @@ import { Router } from '@angular/router';
 @Injectable({
   providedIn: 'root'
 })
-export class VideoService {
+export class VideosFilterService {
   public videos: ISearchItem[];
   public sortByDate: (boolean | string) = false;
   public sortByViews: (boolean | string) = false;

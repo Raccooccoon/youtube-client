@@ -4,9 +4,9 @@ import { Injectable } from '@angular/core';
 import { Observable, BehaviorSubject } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
-import { ISearchResponse } from '../../youtube/models/search-response.model';
-import { ISearchItem } from '../../youtube/models/search-item.model';
-import { ISearchByKeywordResponse } from '../../youtube/models/search-by-keyword-response.model';
+import { ISearchResponse } from '../models/search-response.model';
+import { ISearchItem } from '../models/search-item.model';
+import { ISearchByKeywordResponse } from '../models/search-by-keyword-response.model';
 
 @Injectable({
   providedIn: 'root'

@@ -3,7 +3,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Subject } from 'rxjs';
 import { debounceTime, switchMap, skipWhile, distinctUntilChanged } from 'rxjs/operators';
-import { SearchOfVideosService } from '../../services/search-of-videos.service';
+import { SearchOfVideosService } from '../../../youtube/services/search-of-videos.service';
 
 @Component({
   selector: 'app-search-input',

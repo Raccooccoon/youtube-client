@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { ISearchItem } from '../../models/search-item.model';
-import { SearchOfVideosService } from '../../../core/services/search-of-videos.service';
+import { SearchOfVideosService } from '../../services/search-of-videos.service';
 
 @Component({
   selector: 'app-search-item',
